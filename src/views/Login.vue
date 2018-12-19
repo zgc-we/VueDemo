@@ -38,7 +38,12 @@
                         记住密码
                     </a-checkbox>
                     <a class='login-form-forgot' href=''>忘记密码</a>
-                    <a-button type='primary' htmlType='submit' class='login-form-button subtn'>
+                    <a-button 
+                        type='primary' 
+                        htmlType='submit' 
+                        class='login-form-button subtn'
+                        @click="handleSubmit" 
+                    >
                         登录
                     </a-button>
                 </a-form-item>
@@ -53,6 +58,17 @@
         data () {
             return {
                 form: this.$form.createForm(this),
+            }
+        },
+        methods: {
+            handleSubmit(){
+                this.form.validateFields((err, values) => {
+                    if (!err) {
+                        if (values['userName'] == 'admin' && values['password']=='123456'){
+                            this.$router.push({ path:"/about"})
+                        }
+                    }
+                })
             }
         },
         components: {
