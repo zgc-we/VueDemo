@@ -53,7 +53,7 @@
 </template>
 
 <script>
-    import { Button, Form, Input, Checkbox } from 'ant-design-vue';
+    import { Button, Form, Input, Checkbox, message } from 'ant-design-vue';
     export default {
         data () {
             return {
@@ -66,6 +66,9 @@
                     if (!err) {
                         if (values['userName'] == 'admin' && values['password']=='123456'){
                             this.$router.push({ path:"/about"})
+                            this.$message.success("登录成功")
+                        } else {
+                            this.$message.error("密码输入有误")
                         }
                     }
                 })
@@ -79,6 +82,7 @@
 
 <style lang="less">
     .loginBox{
+         padding-top: 150px;
         .login {
             width: 400px;
             height: 400px;
@@ -88,8 +92,8 @@
             padding-right: 50px;
             border-radius: 10px;
             box-shadow: aliceblue;
-            margin: 150px auto;
-            background: #eee;
+            margin: 0 auto;
+            background: rgba(225,225,225,0.75);
         }
         .subtn{
             width: 300px;

@@ -20,11 +20,13 @@
 
 <style lang="less">
 #app {
+  height: 750px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  background:url("./images/1120.jpg") no-repeat;
+  background-size: 100% 100%;
 }
 #nav {
   padding: 30px;
