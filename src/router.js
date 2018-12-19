@@ -26,7 +26,12 @@ export default new Router({
           path: '/page1',
           name: 'page1',
           component: () => import('./views/UserPage1.vue'),
-        }
+        },
+        {
+          path: '/worInfo',
+          name: 'worInfo',
+          component: () => import('./views/worInfo.vue'),
+        },
       ]
     }
   ]

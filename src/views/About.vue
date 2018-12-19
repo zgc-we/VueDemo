@@ -26,12 +26,18 @@
     </a-layout-sider>
     <a-layout>
       <a-layout-header style="background: rgba(93, 109, 195, 1); color: #fff;padding: 0">
-        <a-icon
-          class="trigger"
-          :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-          @click="()=> collapsed = !collapsed"
-        />
-        XXX南站东西广场信息化综合管理平台
+        <div style="float:left">
+          <a-icon
+            class="trigger"
+            :type="collapsed ? 'menu-unfold' : 'menu-fold'"
+            @click="()=> collapsed = !collapsed"
+          />
+          XXX南站东西广场信息化综合管理平台
+        </div>
+        <div style="float: right;margin-right:20px;">
+          <a-avatar :size="32" icon="user" />
+          <a style="color:#fff;" @click="() => visible = !visible">退出</a>
+        </div>
       </a-layout-header>
       <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
         <div style="display: flex;flex-direction: column;height: 600px;">
@@ -42,6 +48,14 @@
           <div class="footer"> GongXiaoZhu@qq.com</div>
         </div>
       </a-layout-content>
+      <!-- 弹框 -->
+      <a-modal
+        title="退出页面"
+        v-model="visible"
+        @ok="handleOk"
+      >
+        确认退出？
+      </a-modal>
     </a-layout>
   </a-layout>
 </template>
@@ -53,8 +67,14 @@
       return {
         collapsed: false,
         menu: menuList,
+        visible: false
       }
     },
+    methods: {
+      handleOk() {
+        this.$router.push({ path:"/"})
+      }
+    }
   }
 </script>
 
