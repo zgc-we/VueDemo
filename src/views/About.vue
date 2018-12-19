@@ -25,16 +25,22 @@
       </a-menu>
     </a-layout-sider>
     <a-layout>
-      <a-layout-header style="background: #fff; padding: 0">
+      <a-layout-header style="background: rgba(93, 109, 195, 1); color: #fff;padding: 0">
         <a-icon
           class="trigger"
           :type="collapsed ? 'menu-unfold' : 'menu-fold'"
           @click="()=> collapsed = !collapsed"
         />
+        XXX南站东西广场信息化综合管理平台
       </a-layout-header>
       <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
-        这是 about 页面
-        <router-view/>
+        <div style="display: flex;flex-direction: column;height: 600px;">
+          <div style="flex:1;min-height: 450px;">
+            这是 about 页面
+            <router-view/>
+          </div>
+          <div class="footer"> GongXiaoZhu@qq.com</div>
+        </div>
       </a-layout-content>
     </a-layout>
   </a-layout>
@@ -56,6 +62,12 @@
 .home {
   height: 750px;
 }
+.footer{
+  height: 50px;
+    line-height: 50px;
+    border-top: 1px solid rgb(221, 221, 221);
+    text-align: center;
+}
 #components-layout-demo-custom-trigger .trigger {
   font-size: 18px;
   line-height: 64px;
@@ -69,10 +81,11 @@
 }
 
 #components-layout-demo-custom-trigger .logo {
-  height: 32px;
-  background: #fff;
-  margin: 16px;
-  line-height: 32px;
-  overflow: hidden;
+    background: rgba(75, 91, 173, 1);
+    height: 63px;
+    line-height: 63px;
+    padding-left: 23px;
+    color: #fff;
+    overflow: hidden;
 }
 </style>

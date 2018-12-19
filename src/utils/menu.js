@@ -1,11 +1,11 @@
 // 导出配置路由silider值
 const menuList = [
     {
-        name: '客户',
+        name: '工单管理',
         types: 'user',
         children: [
-            {name: 'option1', path: '/page1'},
-            {name: 'option2', path: '/page2'},
+            {name: '统计报表', path: '/page1'},
+            {name: '工单信息', path: '/page2'},
         ]
     },
     {
