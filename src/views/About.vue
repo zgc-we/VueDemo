@@ -42,7 +42,6 @@
       <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
         <div style="display: flex;flex-direction: column;height: 600px;">
           <div style="flex:1;min-height: 450px;">
-            这是 about 页面
             <router-view/>
           </div>
           <div class="footer"> GongXiaoZhu@qq.com</div>

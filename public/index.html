@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <!-- <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=a2f22d847417c04d57c374bfd2789337"></script>  -->
     <title>Vue-cli 3.0</title>
   </head>
   <body>
@@ -14,4 +15,15 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    function init(){
+        var map = new AMap.Map('container', {
+            center: [117.000923, 36.675807],
+            zoom: 6
+        });
+        map.plugin(["AMap.ToolBar"], function() {
+            map.addControl(new AMap.ToolBar());
+        });
+    }
+  </script>
 </html>
