@@ -9,10 +9,10 @@ const menuList = [
         ]
     },
     {
-        name: '设置',
+        name: 'Vue使用',
         types: 'laptop',
         children: [
-            {name: 'option5', path: '/opation1'},
+            {name: '练习', path: '/exercise'},
             {name: 'option6', path: '/opation1'},
             {name: 'option7', path: '/opation1'}
         ]

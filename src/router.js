@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Login from './views/Login.vue'
 
 Vue.use(Router)
 
@@ -12,14 +10,11 @@ export default new Router({
     {
       path: '/',
       name: 'login',
-      component: Login
+      component: () => import('./views/Login.vue'),
     },
     {
       path: '/about',
       name: 'about',
-      // 路线级码分拆
-      // 这将为这个路由生成一个单独的块（大约.[hash].js）。
-      // 当访问路由时，它是惰性加载的。
       component: () => import('./views/About.vue'),
       children: [
         {
@@ -31,6 +26,11 @@ export default new Router({
           path: '/workInfo',
           name: 'workInfo',
           component: () => import('./views/workInfo.vue'),
+        },
+        {
+          path: '/exercise',
+          name: 'exercise',
+          component: () => import('./views/Exercise.vue'),
         },
       ]
     }
