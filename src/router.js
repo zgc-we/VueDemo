@@ -28,9 +28,9 @@ export default new Router({
           component: () => import('./views/UserPage1.vue'),
         },
         {
-          path: '/worInfo',
-          name: 'worInfo',
-          component: () => import('./views/worInfo.vue'),
+          path: '/workInfo',
+          name: 'workInfo',
+          component: () => import('./views/workInfo.vue'),
         },
       ]
     }
