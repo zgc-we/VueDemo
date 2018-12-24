@@ -13,7 +13,7 @@ const menuList = [
         types: 'laptop',
         children: [
             {name: '练习', path: '/exercise'},
-            {name: 'option6', path: '/opation1'},
+            {name: '数据', path: '/dataProps'},
             {name: 'option7', path: '/opation1'}
         ]
     },

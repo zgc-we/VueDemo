@@ -32,6 +32,11 @@ export default new Router({
           name: 'exercise',
           component: () => import('./views/Exercise.vue'),
         },
+        {
+          path: '/dataProps',
+          name: 'dataProps',
+          component: () => import('./views/DataProps.vue'),
+        },
       ]
     }
   ]
