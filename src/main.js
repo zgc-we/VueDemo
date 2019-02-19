@@ -7,10 +7,13 @@ import 'ant-design-vue/dist/antd.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueAMap from "vue-amap";
+// import iView from 'iview';
+// import 'iview/dist/styles/iview.css';
 
 Vue.use(Antd)
 Vue.use(VueAxios, axios);
 Vue.use(VueAMap);
+// Vue.use(iView);
 
 VueAMap.initAMapApiLoader({
   key: "a2f22d847417c04d57c374bfd2789337",
