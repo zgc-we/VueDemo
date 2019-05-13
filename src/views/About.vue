@@ -39,7 +39,7 @@
           <a style="color:#fff;" @click="() => visible = !visible">退出</a>
         </div>
       </a-layout-header>
-      <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
+      <a-layout-content :style="{ margin: '24px 16px', padding: '20px', background: '#fff', minHeight: '280px' }">
         <div style="display: flex;flex-direction: column;height: 600px;">
           <div style="flex:1;min-height: 450px;">
             <router-view/>

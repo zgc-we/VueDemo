@@ -4,7 +4,7 @@ const menuList = [
         name: '工单管理',
         types: 'user',
         children: [
-            {name: '统计报表', path: '/page1'},
+            {name: '商品查询', path: '/page1'},
             {name: '工单信息', path: '/workInfo'},
         ]
     },

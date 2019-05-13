@@ -1,59 +1,69 @@
 <template>
     <div>
-        <div style="width: 350px;">
+        <div style="width: 350px; margin-bottom: 10px;">
             <a-input-search 
-                placeholder="搜索地址" 
+                placeholder="搜索商品" 
                 @search="onSearch" 
                 enterButton="搜索" 
                 size="large" 
             />
         </div>
-        <div class="amap-wrapper">
-            <el-amap 
-            vid="amapDemo" 
-            :center="center" 
-            :zoom="zoom"
-            class="amap-demo">
-                <el-amap-marker 
-                    vid="marker" 
-                    :position="center" 
-                    :label="label"
-                >
-                </el-amap-marker>
-            </el-amap>
-        </div>
+        <section class="card_box">
+            <article class="card">
+                <ul>
+                    <li v-for="(k,i) in pro_list" :key="i">
+                        <img :src="k.src" alt=""/>
+                        <header>{{k.name}}</header>
+                        <div>{{k.content}}</div>
+                    </li>
+                </ul>
+            </article>
+        </section>
     </div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                label:{
-                    content:'钦汇园',
-                    offset:[10,12]
-                },
-                zoom: 16,
-                center: [116.397428, 39.90923]
-            }
-        },
-        methods: {
-            onSearch (value) {
-                this.$http.get(`https://restapi.amap.com/v3/assistant/inputtips?key=a2f22d847417c04d57c374bfd2789337&keywords=${value}`
-                ).then(data => {
-                    console.log(data, '-----data----')
-                }).catch(err => {
-                    console.log(err);
-                }) 
-            },
+import { mapState } from 'vuex';
+import axios from 'axios';
+export default {
+    data() {
+        return {
+            
         }
-    }
+    },
+    created: function() {
+        // this.$http.get() // 方式请求接口
+        // console.log(this.$store.state, '---1111---');
+        // console.log(JSON.stringify(axios), '----http---')
+        console.log(this, '---this---')
+    },
+    methods: {
+         onSearch (value) {
+            this.$http.get(`https://restapi.amap.com/v3/assistant/inputtips?key=a2f22d847417c04d57c374bfd2789337&keywords=${value}`
+            ).then(data => {
+                console.log(data, '-----data----')
+            }).catch(err => {
+                console.log(err);
+            }) 
+        },
+    },
+    computed:  mapState({
+        pro_list: state => state.shopList.list,
+    })
+}
 </script>
 
 <style lang="less">
-    .amap-wrapper{
-        width: 1200px;
-        height: 500px;
+    .card_box{
+        .card>ul{
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            &>li{
+                width: 300px;
+                text-align: center;
+            }
+        }
     }
 </style>
 
